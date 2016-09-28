@@ -1,0 +1,25 @@
+<html>
+<head>
+  <title>Online State example</title>
+</head>
+<body>
+
+<h1 id="info"></h1>
+
+<script type="text/javascript">
+
+var info = document.getElementById('info');
+var status = navigator.onLine ? 'online' : 'offline';
+info.innerHTML = status;
+
+window.addEventListener('offline', networkStatus);
+window.addEventListener('online', networkStatus);
+
+function networkStatus(e) {
+  info.innerHTML = e.type;
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<html>
+<head>
+  <title>Camera example</title>
+</head>
+<body>
+
+<video id="video" width="640" height="480" autoplay></video>
+<button id="snap">Snap Photo</button>
+<canvas id="canvas" width="640" height="480"></canvas>
+
+<script type="text/javascript">
+
+var video = document.getElementById('video');
+var canvas = document.getElementById('canvas');
+var context = canvas.getContext('2d');
+
+navigator.mediaDevices.getUserMedia({ video: true }).then(function(stream) {
+  video.src = window.URL.createObjectURL(stream);
+  video.play();
+});
+
+document.getElementById('snap').addEventListener('click', function() {
+  context.drawImage(video, 0, 0, 640, 480);
+});
+
+</script>
+
+</body>
+</html>

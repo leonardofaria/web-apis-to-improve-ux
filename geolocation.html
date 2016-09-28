@@ -1,0 +1,23 @@
+<html>
+<head>
+  <title>Geolocation example</title>
+</head>
+<body>
+
+<div id="info"></div>
+
+<script type="text/javascript">
+
+var info = document.getElementById('info');
+
+navigator.geolocation.getCurrentPosition(function(position) {
+  var latitude = position.coords.latitude;
+  var longitude = position.coords.longitude;
+
+  info.innerHTML = 'My latitude is ' + latitude + ' and longitude is ' + longitude;
+});
+
+</script>
+
+</body>
+</html>

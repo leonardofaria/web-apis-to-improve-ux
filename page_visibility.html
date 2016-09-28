@@ -1,0 +1,22 @@
+<html>
+<head>
+  <title>Page Visibility example</title>
+</head>
+<body>
+
+<h1>Open a new tab and see the title of this one</h1>
+
+<script type="text/javascript">
+
+window.addEventListener('visibilitychange', function() {
+  if (document.hidden) {
+    document.title = 'Tab is hidden';
+  } else {
+    document.title = 'Tab is focused';
+  }
+});
+
+</script>
+
+</body>
+</html>
