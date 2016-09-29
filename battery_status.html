@@ -1,0 +1,26 @@
+<html>
+<head>
+  <title>Battery Status example</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+<h1 id="info"></h1>
+
+<script type="text/javascript">
+
+var info = document.getElementById('info');
+info.innerHTML = status;
+
+navigator.getBattery().then(function(battery) {
+  info.innerHTML = battery.level * 100;
+
+  battery.addEventListener('levelchange', function() {
+   info.innerHTML = battery.level * 100;
+ });
+});
+
+</script>
+
+</body>
+</html>
